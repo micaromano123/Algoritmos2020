@@ -1,3 +1,4 @@
-Micaela;42936875;Romano Micaela
-Luciana;42939855;Roldan Luciana
-arias2020;2020arias;Arias Josefinajavier;javier;Canto Javier
+admin;admin;administrador del sistema
+Javier2020;Javier2020;Canto Javier
+Luciana40;Luciana40;Roldan Luciana
+Javier20;Javier20;Canto Javier Ec
