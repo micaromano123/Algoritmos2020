@@ -2,6 +2,21 @@
 La gerencia del centro veterinario es la encargada de realizar el alta de los veterinarios que trabajan en la institución, así como también de los empleados que realizan la registración de los turnos y mascotas.
 Es el área encargada desea visualizar las atenciones realizadas por los profesionales según las en el mes.
 Para incentivar a los veterinarios, la gerencia otorga un bono mensual al profesional que haya registrado la mayor cantidad de turnos en ese periodo.
+
+Universidas Tecnologica Nacional
+Facultad Regional Tucuman
+
+Ingenieria en Sistemas de Informacion
+Algoritmo y Estructuras de Datos
+2020
+
+50085- Romano Micaela (42936875)
+romano.mica@gmail.com
+COMISION 1K5
+
+50137 - Roldan Luciana (42939855)
+lucianaroldan855@gmail.com
+COMISION 1K5
 */
 
 #include <stdlib.h>
@@ -9,7 +24,8 @@ Para incentivar a los veterinarios, la gerencia otorga un bono mensual al profes
 #include <stdio.h>
 #include <conio.h>
 
-struct veterinario
+
+struct veterinario  //se empieza con la estuctura de las variables//
 {
 	char nom[60];
 	int mat;
@@ -37,7 +53,7 @@ struct turno
     fecha fec;
     int dni;
     char det[380];
-};
+};                    //fin de las estructuras//
 
 int buscarUsuario(char usu[10],char cla[10]);
 void registrarVeterinario();
@@ -52,8 +68,8 @@ main()
 	
 	
 	printf("MODULO RECEPCION");
-	printf("\nIngrese el usario: ");
-	_flushall( );
+	printf("\nIngrese el usario: "); 
+	_flushall( );//se limpia el buffer//
 	gets(usu);
 	printf("Ingrese la clave: ");
 	_flushall( );
@@ -195,12 +211,12 @@ void ranking()
  turno rt;
  int c;
  
- struct registro
+ struct registro    //se abre una estructura de tipo registro//
  {
  	char nom[60];
 	int   cant;
 	
- };
+ };            //cierre de la estructura//
 
 registro a[100],aux;
 int n  =0, i=0,j=0; 
@@ -222,13 +238,13 @@ int n  =0, i=0,j=0;
  		
  	fread(&rt, sizeof(rt),1,arch2);
  	}
- strcpy(a[n].nom,rv.nom); //copia el nombre del vet cad
- a[ n].cant=c;    // cantidad q atendio
+ strcpy(a[n].nom,rv.nom); 
+ a[ n].cant=c;    //cantidad que atendio el veterinario//
  n++;
  fread(&rv,sizeof(rv),1,arch1);
  }
  fclose(arch1);
- fclose(arch2);
+ fclose(arch2); //cierre del archivo//
  
  for(j=0 ; j<n ; j++)
  {
@@ -243,11 +259,11 @@ int n  =0, i=0,j=0;
  		
  	}
  	
- } // fin del ordenamiento por burbuja
+ } //fin del ordenamiento por burbuja//
  printf("\n Ranking de atencion");
  for(i=0 ; i<n ; i++)
  {
- 	printf("\n Veterinario %s atendio %d mascotas" , a[i].nom,a[i].cant ); //Mostrar  la cantidad de ranking 
+ 	printf("\n Veterinario %s atendio %d mascotas" , a[i].nom,a[i].cant ); //Mostrar la cantidad que tiene el ranking//
  }
  
 }

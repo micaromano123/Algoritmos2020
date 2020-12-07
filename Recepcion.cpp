@@ -2,6 +2,21 @@
 Módulo Recepción:
 Este módulo satisface las necesidades del personal que asiste a los veterinarios en la atención al público. Desde aquí se hace ingreso de las mascotas, y la registración de los turnos.
 Esta aplicación debe permitir obtener un informe de las mascotas atendidos en determinada fecha por un determinado veterinario.
+
+Universidas Tecnologica Nacional
+Facultad Regional Tucuman
+
+Ingenieria en Sistemas de Informacion
+Algoritmo y Estructuras de Datos
+2020
+
+50085- Romano Micaela (42936875)
+romano.mica@gmail.com
+COMISION 1K5
+
+50137 - Roldan Luciana (42939855)
+lucianaroldan855@gmail.com
+COMISION 1K5
 */
 
 #include <stdlib.h>
@@ -9,7 +24,7 @@ Esta aplicación debe permitir obtener un informe de las mascotas atendidos en de
 #include <stdio.h>
 #include <conio.h>
 
-struct veterinario
+struct veterinario //se empeizas con las estructuras//
 {
 	char nom[60];
 	int mat;
@@ -37,7 +52,8 @@ struct turno
     fecha fec;
     int dni;
     char det[380];
-};
+};                  //cierre de las estrucutras//
+
 int buscarUsuario(char usu[10],char cla[10]);
 void registrarMascotas();
 void registrarTurno();
@@ -53,10 +69,10 @@ main()
 	
 	printf("MODULO RECEPCION");
 	printf("\nIngrese el usario: ");
-	_flushall( );
+	_flushall( ); //se limpia el buffer//
 	gets(usu);
 	printf("Ingrese la clave: ");
-	_flushall( );
+	_flushall( );   //se limpia el buffer//
 	gets(cla);
 	
 	h=buscarUsuario(usu,cla);
@@ -96,7 +112,7 @@ bool buscarMatricula(int mat)
     veterinario reg;
     bool hallado=false;
     FILE*arch;
-    arch=fopen("veterinario.dat","rb");
+    arch=fopen("veterinario.dat","rb"); //abre un archivo binario para lectura//
     fread(&reg,sizeof(reg),1,arch);
     while(!feof(arch))
     {

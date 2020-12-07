@@ -1,7 +1,23 @@
 /*
+Modulo Consultorio Veterinario:
 Esta parte del proyecto estará dirigida a los diferentes profesionales que atienden y registran la evolución de las mascotas en una base de datos de historias clínicas. El sistema deberá contar con un listado de las mascotas que están registradas para ser atendidas ese día, para visualizarla, el veterinario deberá identificarse en el sistema por medio de su número de matrícula y contraseña y accediendo a la opción indicada. De esta manera el veterinario llamará por apellido y nombre a la mascota que atenderá, una vez realizada esta tarea procede al ingreso de la evolución, en un texto de no más de 380 caracteres. Luego de realizada esta operación la mascota debe desaparecer del listado.
 Los datos de interés para el veterinario en este proceso son: Apellido y Nombres de la mascota (el apellido corresponde al dueño o familia), DNI del dueño, Localidad, Edad (calculada con la fecha de nacimiento registrada), Peso.
 La historia clínica de la mascota es común para todos los veterinarios, por lo tanto se deberá visualizar fecha de atentación de la misma y el nombre del veterinario que la redacto.
+
+Universidas Tecnologica Nacional
+Facultad Regional Tucuman
+
+Ingenieria en Sistemas de Informacion
+Algoritmo y Estructuras de Datos
+2020
+
+50085- Romano Micaela (42936875)
+romano.mica@gmail.com
+COMISION 1K5
+
+50137 - Roldan Luciana (42939855)
+lucianaroldan855@gmail.com
+COMISION 1K5
 */
 
 #include <stdlib.h>
@@ -10,7 +26,7 @@ La historia clínica de la mascota es común para todos los veterinarios, por lo t
 #include <conio.h>
 #include <time.h>
 
-struct veterinario
+struct veterinario //empieza con distintas estructuras//
 {
 	char nom[60];
 	int mat;
@@ -38,7 +54,7 @@ struct turno
     fecha fec;
     int dni;
     char det[380];
-};
+};                     //cierre de las estructuras//
 
 int buscarUsuario(char usu[10],char cla[10]);
 void visualizarLista();
@@ -52,7 +68,7 @@ main()
 	
 	printf("MODULO RECEPCION");
 	printf("\nIngrese el usario: ");
-	_flushall( );
+	_flushall( ); //se limpia el buffer//
 	gets(usu);
 	printf("Ingrese la clave: ");
 	_flushall( );
@@ -110,8 +126,8 @@ void visualizarLista()
     
     printf("\nIngrese la matricula del veterinario: ");
     scanf("%d", &mat);
-    arch=fopen("turnos.dat","rb");
-    fread(&reg, sizeof (reg),1,arch);
+    arch=fopen("turnos.dat","rb"); //apertura de un archivo// //abre un archivo binario para lectura//
+    fread(&reg, sizeof (reg),1,arch); //lee el archivo//
     while(!feof(arch))
     {
         if(fec.dia==reg.fec.dia && fec.mes==reg.fec.mes && fec.anio==reg.fec.anio && mat==reg.mat)
@@ -120,9 +136,9 @@ void visualizarLista()
             printf("\nFecha %d/%d/%d: ",reg.fec.dia, reg.fec.mes, reg.fec.anio);
             printf("\nDetalle: %s", reg.det);
         }
-        fread(&reg, sizeof (reg),1,arch);
+        fread(&reg, sizeof (reg),1,arch); //lee el archivo//
     }
-    fclose(arch);
+    fclose(arch); //cierre del archivo//
 }
 void evolucionMascota()
 {
@@ -134,8 +150,8 @@ void evolucionMascota()
     bool h=false,h1=false;
     printf("\nIngrese el dni de la mascota: ");
     scanf("%d", &dni);
-    arch1=fopen("turnos.dat","rb+");
-    fread(&reg1,sizeof (reg1),1,arch1);
+    arch1=fopen("turnos.dat","rb+"); //abre un archivo.// //abre un archivo binario para lectura / escritura.//
+    fread(&reg1,sizeof (reg1),1,arch1); //se lee el archivo// //lee datos de cualquier tipo//
     while(!feof(arch1) && h==false)
     {
         
@@ -155,7 +171,7 @@ void evolucionMascota()
     } 
     else{
         
-          arch=fopen("mascotas.dat","rb+");
+          arch=fopen("mascotas.dat","rb+"); //abre un archivo binario para lectura / escritura.//
           fread(&reg,sizeof(reg),1,arch);
     while(!feof(arch) && h1==false)
     {
@@ -180,7 +196,7 @@ void evolucionMascota()
     gets(datos);
     strcat(reg1.det,"\n");
     strcat(reg1.det,datos);
-    fseek(arch1,posi,SEEK_SET);
+    fseek(arch1,posi,SEEK_SET); //busca un byte especifico de un archivo.//
     fwrite(&reg1,sizeof(reg1),1,arch1);
     fclose(arch1);
     fclose(arch);
@@ -202,7 +218,7 @@ int buscarUsuario(char usu[10],char cla[10])
 	FILE*arch;
 	char linea[80];
 	arch=fopen("usuario.txt","rt");
-	fgets(linea,80,arch);
+	fgets(linea,80,arch);  //lee una cadena de un archivo.//
 	while(!feof(arch))
 	{
 		if(Buscar(linea, usu, cla))
@@ -210,9 +226,9 @@ int buscarUsuario(char usu[10],char cla[10])
 			fclose(arch);
 			return 1; //1=Hallado
 		}
-	fgets(linea,80,arch);	
+	fgets(linea,80,arch);	//lee una cadena de un archivo.//
 	}
-	fclose(arch);
+	fclose(arch); //cierra un archivo.//
 	return 0;//0=No hallado
 	
 }
