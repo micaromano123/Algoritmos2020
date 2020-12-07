@@ -3,6 +3,8 @@ Módulo Recepción:
 Este módulo satisface las necesidades del personal que asiste a los veterinarios en la atención al público. Desde aquí se hace ingreso de las mascotas, y la registración de los turnos.
 Esta aplicación debe permitir obtener un informe de las mascotas atendidos en determinada fecha por un determinado veterinario.
 
+LINK: https://github.com/micaromano123/Algoritmos2020
+
 Universidas Tecnologica Nacional
 Facultad Regional Tucuman
 

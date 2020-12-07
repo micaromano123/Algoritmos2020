@@ -4,6 +4,8 @@ Esta parte del proyecto estará dirigida a los diferentes profesionales que atien
 Los datos de interés para el veterinario en este proceso son: Apellido y Nombres de la mascota (el apellido corresponde al dueño o familia), DNI del dueño, Localidad, Edad (calculada con la fecha de nacimiento registrada), Peso.
 La historia clínica de la mascota es común para todos los veterinarios, por lo tanto se deberá visualizar fecha de atentación de la misma y el nombre del veterinario que la redacto.
 
+LINK: https://github.com/micaromano123/Algoritmos2020
+
 Universidas Tecnologica Nacional
 Facultad Regional Tucuman
 

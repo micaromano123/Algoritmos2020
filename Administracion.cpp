@@ -3,6 +3,8 @@ La gerencia del centro veterinario es la encargada de realizar el alta de los ve
 Es el área encargada desea visualizar las atenciones realizadas por los profesionales según las en el mes.
 Para incentivar a los veterinarios, la gerencia otorga un bono mensual al profesional que haya registrado la mayor cantidad de turnos en ese periodo.
 
+LINK: https://github.com/micaromano123/Algoritmos2020
+
 Universidas Tecnologica Nacional
 Facultad Regional Tucuman
 
